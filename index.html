@@ -50,7 +50,7 @@
 
 
                 <div class="form">
-                    <i class="fas fa-search"></i> <input type="text" placeholder="cerca o inizia una nuova chatt">
+                    <i class="fas fa-search"></i> <input id="cercaprof" type="text" placeholder="cerca o inizia una nuova chatt">
                 </div>
                 <!-- sezione profili -->
                 <div v-for="contact,i in contacts" id="contenitoriprofil">
@@ -60,11 +60,13 @@
                     <div class="text">
                         <div class="textdue">
                             <strong><span>{{contact.name}}</span></strong> <br>
-                            <span>{{contact.text}}</span>
+                        </div>
+                        <div class="texttre">
+                            <span>{{contact.messages[contact.messages.length-1].text}}</span>
                         </div>
 
                         <div id="dataora">
-                            <span>10/11/2021 14:30:33</span>
+                            <span>{{contact.messages[contact.messages.length-1].date}}</span>
                         </div>
                     </div>
                    
@@ -97,12 +99,36 @@
                     </div>
                 </nav>
                 <section class="chattattiva">
+                    <div class="sent">
+                        <span>Ultimo accesso oggi alle </span>
 
+                    </div>
+                    <div class="sent">
+                        <span>Ultimo accesso oggi alle </span>
+
+                    </div>
+
+                    <div class="recived">
+                        <span>Ultimo accesso oggi alle </span>
+
+                    </div>
                 </section>
 
-                <div class="scrivimessaggio">
+                <footer class="scrivimessaggio">
+
+                    <div class="emoticon">
+                        <i class="far fa-smile"></i>
+                    </div>
+
+                    <div class="inserisciTesto">
+                    <input id="mex" type="text" placeholder="scrivi un messaggio">
+                    </div>
+
+                    <div class="micr">
+                        <i class="fas fa-microphone"></i>
+                    </div>
                     
-                </div>
+                </footer>
 
                 
 
