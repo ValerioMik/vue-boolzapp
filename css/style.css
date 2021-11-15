@@ -95,19 +95,24 @@ body{
  vertical-align: middle;
 }
 
+.textdue{
+    display: inline;
+}
+
 .form{
     display: inline-block;
     width: 100%;
     height: 40px;
     padding: 5px;
+    margin-bottom: 10px;
     /* debug */
     background-color: rgb(255, 255, 255);
 
 }
 
 .imaginiprofilo{
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     float: left;
     display: inline;
     vertical-align: middle;
@@ -128,11 +133,21 @@ img{
 i{
     margin: 6px;
     color: grey;
+    font-size: 25px;
 }
 
-
-
-
+#contenitoriprofil{
+    width: 100%;
+    height: 70px;
+    border-bottom: solid 2px grey;
+    display: flex;
+}
+#dataora{
+    width: auto;
+    height: auto;
+    float: right;
+    margin-left: 180px;
+}
 /* main messaggi */
 .chattattiva{
     width: 100%;
@@ -149,4 +164,8 @@ i{
     background-color: blue;
     align-content: flex-end;
 
+}
+
+.active{
+ background-color: rgb(216, 216, 216);
 }

@@ -13,10 +13,10 @@
 <body>
     <!-- sezione di sfondo -->
 
-    <div class="sfondo">
+    <div id="app" class="sfondo">
 
         <!-- sezione navigatore sx-->
-        <div id="app" class="container">
+        <div  class="container">
 
 
             <!-- asaide sx -->
@@ -52,6 +52,23 @@
                 <div class="form">
                     <i class="fas fa-search"></i> <input type="text" placeholder="cerca o inizia una nuova chatt">
                 </div>
+                <!-- sezione profili -->
+                <div v-for="contact,i in contacts" id="contenitoriprofil">
+                    <div class="imaginiprofilo">
+                        <img :src="contact.avatar" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="textdue">
+                            <strong><span>{{contact.name}}</span></strong> <br>
+                            <span>{{contact.text}}</span>
+                        </div>
+
+                        <div id="dataora">
+                            <span>10/11/2021 14:30:33</span>
+                        </div>
+                    </div>
+                   
+                </div>
 
 
             </aside>
@@ -59,6 +76,7 @@
 
 
             <!-- sezione nav dex -->
+             <!-- sezione main con messaggi-->
 
             <main class="messagistica">
                 <nav class="navigatoredx">
@@ -86,10 +104,11 @@
                     
                 </div>
 
+                
+
             </main>
 
         </div>
-        <!-- sezione main con messaggi-->
         <!-- sezione inserisci messaggio -->
 
     </div>
