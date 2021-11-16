@@ -77,7 +77,8 @@
 
 
             <!-- sezione nav dex -->
-             <!-- sezione main con messaggi-->
+
+             <!-- sezione main con messaggi avatar-->
 
             <main class="messagistica">
                 <nav class="navigatoredx">
@@ -96,9 +97,11 @@
 
 
                     </div>
+
+                    <!-- sezio testo messaggi -->
                 </nav>
                 <section v-for="contact,i in contacts" class="chattattiva" :key="i">
-                    <div :class="contact..messages[contact.length-1].status">
+                    <div class="contact..messages[contact.length-1]">
                         <div class="textdue">
                             {{contact.messages[contact.messages.length-1].text}}
                         </div>
