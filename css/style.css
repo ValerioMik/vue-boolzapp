@@ -102,10 +102,13 @@ body{
  vertical-align: middle;
 }
 
-.textdue{
-    display: inline;
-}
 
+.textdue{
+ float: left;
+}
+.texttre{
+    float: left;
+}
 .form{
     display: inline-block;
     width: 100%;
@@ -153,17 +156,19 @@ i{
     width: auto;
     height: auto;
     float: right;
-    margin-left: 245px;
+    margin: auto;
+    margin-left: 190px;
 }
 /* main messaggi */
 .chattattiva{
     width: 100%;
     height: 1408px;
-    background-image: url(/img/2601039697d8c8c730ec09e78a8395e0.png);
+    background-image: url(../img/R.png);
     background-repeat: no-repeat;
     background-size: cover;
     align-content: center;
     position: relative;
+    overflow-y: scroll;
 }
 
 .scrivimessaggio{
@@ -206,27 +211,54 @@ i{
 }
 
 .sent{
-    position: absolute;
+   padding: 5px;
     width: 185px;
     border-radius: 14px;
-    height: 42px;   
+    overflow-y: auto; 
+    min-height: 39px;   
     background-color: greenyellow;
     margin-left: 581px;
-    margin-top: 44px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .recived{
-    position: absolute;
+   padding: 5px;
     width: 185px;
     border-radius: 14px;
-    height: 42px;
+    overflow-y: auto;
+    min-height: 39px; ;
     background-color: rgb(255, 255, 255);
     margin-left: 133px;
-    margin-top: 191px;
+    margin-top: 40px;
+    text-align: center;
+}
+.textmessa{
+    float: left;
+}
+
+#dataoramessa{
+    float: right;
+    margin: auto;
+    margin-left: 90px;
+    font-size: 10px;
 }
 
 /* stati over active */
 
 .active{
  background-color: rgb(216, 216, 216);
+}
+
+#contenitoriprofil:hover{
+    cursor: pointer;
+    background-color: rgb(179, 179, 179);
+}
+
+.chattattiva{
+    display: block;
+}
+
+.chatnascosta{
+display: none;
 }

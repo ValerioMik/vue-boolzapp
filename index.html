@@ -53,20 +53,19 @@
                     <i class="fas fa-search"></i> <input id="cercaprof" type="text" placeholder="cerca o inizia una nuova chatt">
                 </div>
                 <!-- sezione profili -->
-                <div v-for="contact,i in contacts" id="contenitoriprofil">
+                <div class="" v-for="contact,i in contacts" id="contenitoriprofil" :key="i">
                     <div class="imaginiprofilo">
                         <img :src="contact.avatar" alt="">
                     </div>
-                    <div class="text">
+                    <div class="text ">
                         <div class="textdue">
-                            <strong><span>{{contact.name}}</span></strong> <br>
+                            <strong><span>{{contact.name}}</span></strong> 
                         </div>
-                        <div class="texttre">
-                            <span>{{contact.messages[contact.messages.length-1].text}}</span>
-                        </div>
-
                         <div id="dataora">
                             <span>{{contact.messages[contact.messages.length-1].date}}</span>
+                        </div> <br>
+                        <div class="texttre">
+                            <span>{{contact.messages[contact.messages.length-1].text}}</span>
                         </div>
                     </div>
                    
@@ -98,20 +97,18 @@
 
                     </div>
                 </nav>
-                <section class="chattattiva">
-                    <div class="sent">
-                        <span>Ultimo accesso oggi alle </span>
+                <section v-for="contact,i in contacts" class="chattattiva" :key="i">
+                    <div :class="contact..messages[contact.length-1].status">
+                        <div class="textdue">
+                            {{contact.messages[contact.messages.length-1].text}}
+                        </div>
+                        <div id="dataoramessa">
+                            {{contact.messages[contact.messages.length-1].date}}
+                        </div>
 
                     </div>
-                    <div class="sent">
-                        <span>Ultimo accesso oggi alle </span>
 
-                    </div>
 
-                    <div class="recived">
-                        <span>Ultimo accesso oggi alle </span>
-
-                    </div>
                 </section>
 
                 <footer class="scrivimessaggio">
@@ -144,3 +141,5 @@
 </body>
 
 </html>
+
+<!-- :class="contact.visibile ===  true ? 'chattattiva':''" -->
