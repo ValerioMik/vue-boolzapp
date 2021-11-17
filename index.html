@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="inserisciTesto">
-                        <input @keyup.enter="aggiungimessaggio(activechatt)" id="mex" type="text" v-mode="nuovomessaggio.text" placeholder="scrivi un messaggio">
+                        <input @keyup.enter="aggiungimessaggio(activechatt)" id="mex" type="text" v-model="nuovomessaggio.text" placeholder="scrivi un messaggio">
                     </div>
 
                     <div class="micr">

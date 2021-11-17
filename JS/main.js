@@ -23,7 +23,7 @@ var app = new Vue({
         risposta:{
             date:'10/12/2021 14:30:50',
             text:'ok',
-            status:'recived'
+            status:'received'
         },
         contacts: [
             {
@@ -115,12 +115,10 @@ var app = new Vue({
         attivaLachatt(index) {
             this.activechatt = index;
         },
-        aggiungimessaggio() {
-            this.contacts.find((element)=>{
-                element.messages.push(this.nuovomessaggio);
-                setTimeout(()=>element.messages.pusch(this.risposta),2000)
-                  
-            })
+        aggiungimessaggio(i) {
+            this.contacts[this.activechatt].messages.push(this.nuovomessaggio);
+            setTimeout(()=>this.contacts[this.activechatt].messages.push(this.risposta), 2000);
+
             this.nuovomessaggio = {
                 date:'10/12/2021 14:30:50',
                 text:'',
