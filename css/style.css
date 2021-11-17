@@ -219,10 +219,10 @@ i{
     background-color: greenyellow;
     margin-left: 581px;
     margin-top: 20px;
-    text-align: center;
+    
 }
 
-.recived{
+.received{
    padding: 5px;
     width: 185px;
     border-radius: 14px;
@@ -231,7 +231,7 @@ i{
     background-color: rgb(255, 255, 255);
     margin-left: 133px;
     margin-top: 40px;
-    text-align: center;
+    
 }
 .textmessa{
     float: left;
@@ -247,7 +247,7 @@ i{
 /* stati over active */
 
 .active{
- background-color: rgb(216, 216, 216);
+ background-color:  rgb(179, 179, 179);
 }
 
 #contenitoriprofil:hover{
@@ -259,6 +259,3 @@ i{
     display: block;
 }
 
-.chatnascosta{
-display: none;
-}

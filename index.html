@@ -16,7 +16,7 @@
     <div id="app" class="sfondo">
 
         <!-- sezione navigatore sx-->
-        <div  class="container">
+        <div class="container">
 
 
             <!-- asaide sx -->
@@ -50,16 +50,18 @@
 
 
                 <div class="form">
-                    <i class="fas fa-search"></i> <input id="cercaprof" type="text" placeholder="cerca o inizia una nuova chatt">
+                    <i class="fas fa-search"></i> <input id="cercaprof" type="text"
+                        placeholder="cerca o inizia una nuova chatt">
                 </div>
                 <!-- sezione profili -->
-                <div @click="attivaLachatt(index)" :class="index === activechatt ?'contact active':'contact'" v-for="contact,index in contacts" id="contenitoriprofil" :key="index">
+                <div @click="attivaLachatt(index)" :class="index === activechatt ?'contact active':'contact'"
+                    v-for="contact,index in contacts" id="contenitoriprofil" :key="index">
                     <div class="imaginiprofilo">
                         <img :src="contact.avatar" alt="">
                     </div>
                     <div class="text ">
                         <div class="textdue">
-                            <strong><span>{{contact.name}}</span></strong> 
+                            <strong><span>{{contact.name}}</span></strong>
                         </div>
                         <div id="dataora">
                             <span>{{contact.messages[contact.messages.length-1].date}}</span>
@@ -68,7 +70,7 @@
                             <span>{{contact.messages[contact.messages.length-1].text}}</span>
                         </div>
                     </div>
-                   
+
                 </div>
 
 
@@ -78,15 +80,15 @@
 
             <!-- sezione nav dex -->
 
-             <!-- sezione main con messaggi avatar-->
+            <!-- sezione main con messaggi avatar-->
 
-            <main class="messagistica">
+            <main  v-for="contact, i in contacts" :key="i" v-if="contact.visible" class="messagistica">
                 <nav class="navigatoredx">
                     <div class="imaginiprofilo">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="contacts[activechatt].avatar" alt="">
                     </div>
-                    <div class="text">
-                        <strong><span>Antonio</span></strong> <br>
+                    <div  class="text">
+                        <strong><span>{{contacts[activechatt].name}}</span></strong> <br>
                         <span>Ultimo accesso oggi alle 10/11/2021 16:14:22</span>
 
                     </div>
@@ -101,7 +103,7 @@
                     <!-- sezio testo messaggi -->
                 </nav>
                 <section v-for="contact, i in contacts" class="chattattiva" :key="i" v-if="contact.visible">
-                    <div v-for="message, j in contact.messages" :key="j">
+                    <div v-for="message, j in contacts[activechatt].messages" :key="j" >
                         <div :class="message.status">
                             <div class="textdue">
                                 {{message.text}}
@@ -123,16 +125,16 @@
                     </div>
 
                     <div class="inserisciTesto">
-                    <input id="mex" type="text" placeholder="scrivi un messaggio">
+                        <input @keyup.enter="aggiungimessaggio(activechatt)" id="mex" type="text" v-mode="nuovomessaggio.text" placeholder="scrivi un messaggio">
                     </div>
 
                     <div class="micr">
                         <i class="fas fa-microphone"></i>
                     </div>
-                    
+
                 </footer>
 
-                
+
 
             </main>
 
@@ -146,4 +148,3 @@
 </body>
 
 </html>
-

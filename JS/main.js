@@ -14,7 +14,17 @@ nome e immagine di ogni contatto
 var app = new Vue({
     el: '#app',
     data: {
-        activeslide: 0,
+        activechatt: 0,
+        nuovomessaggio:{
+            date:'10/12/2021 14:30:50',
+            text:'',
+            status:'sent'
+        },
+        risposta:{
+            date:'10/12/2021 14:30:50',
+            text:'ok',
+            status:'recived'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -102,14 +112,23 @@ var app = new Vue({
         ]
     },
     methods: {
-        chattattiva: function () {
-            if (this.activeslide === this.visible(true)){
-                this.activeslide == 0;
-            }else{
-
+        attivaLachatt(index) {
+            this.activechatt = index;
+        },
+        aggiungimessaggio() {
+            this.contacts.find((element)=>{
+                element.messages.push(this.nuovomessaggio);
+                setTimeout(()=>element.messages.pusch(this.risposta),2000)
+                  
+            })
+            this.nuovomessaggio = {
+                date:'10/12/2021 14:30:50',
+                text:'',
+                status:'sent'
             }
-
-            }
+                
+        },
+        
     }
 }
 );
