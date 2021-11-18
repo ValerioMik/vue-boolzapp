@@ -50,12 +50,12 @@
 
 
                 <div class="form">
-                    <i class="fas fa-search"></i> <input id="cercaprof" type="text"
+                    <i class="fas fa-search"></i> <input v-model="cercainiziale" id="cercaprof" type="text"
                         placeholder="cerca o inizia una nuova chatt">
                 </div>
                 <!-- sezione profili -->
-                <div @click="attivaLachatt(index)" :class="index === activechatt ?'contact active':'contact'"
-                    v-for="contact,index in contacts" id="contenitoriprofil" :key="index">
+                <div  @click="attivaLachatt(index)" :class="index === activechatt ?'contact active':'contact'"
+                    v-for="contact,index in contacts" id="contenitoriprofil" v-if="contact.name.toLowerCase().includes(cercainiziale.toLowerCase())" :key="index">
                     <div class="imaginiprofilo">
                         <img :src="contact.avatar" alt="">
                     </div>
@@ -82,7 +82,7 @@
 
             <!-- sezione main con messaggi avatar-->
 
-            <main  v-for="contact, i in contacts" :key="i" v-if="contact.visible" class="messagistica">
+            <main v-for="contact, i in contacts" :key="i" v-if="contact.visible" class="messagistica">
                 <nav class="navigatoredx">
                     <div class="imaginiprofilo">
                         <img :src="contacts[activechatt].avatar" alt="">

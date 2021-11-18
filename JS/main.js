@@ -14,6 +14,7 @@ nome e immagine di ogni contatto
 var app = new Vue({
     el: '#app',
     data: {
+        cercainiziale:'',
         activechatt: 0,
         nuovomessaggio:{
             date:'10/12/2021 14:30:50',
@@ -126,6 +127,7 @@ var app = new Vue({
             }
                 
         },
+        
         
     }
 }
