@@ -112,9 +112,11 @@ var app = new Vue({
             },
         ]
     },
+    /* questo mi serve per richiamarmi l'indici */
     methods: {
         attivaLachatt(index) {
             this.activechatt = index;
+        /* la risposta lo messa in alto e le richiamo qui nel metodo (metodo che mi serve per acquisire il messaggio e rispondere)*/
         },
         aggiungimessaggio(i) {
             this.contacts[this.activechatt].messages.push(this.nuovomessaggio);
